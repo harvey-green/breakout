@@ -3,12 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Breakout.CircuitBreaker</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Harvey Green</Authors>
     <Company>Harvey Green</Company>
     <PackageTags>Circuit Breaker;State Machine;STATE Pattern;GoF;Design Pattern</PackageTags>
     <Description>A dotnet implementation of Michael Nygard's Circuit Breaker state machine, using the Gang of Four's STATE pattern.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/harvey-green/breakout</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
