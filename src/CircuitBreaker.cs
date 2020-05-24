@@ -4,6 +4,7 @@ using System.Threading;
 
 namespace Breakout.CircuitBreaker
 {
+    // The Circuit Breaker interface.
     public interface ICircuitBreaker
     {
         void OperationSucceeded();
@@ -16,6 +17,9 @@ namespace Breakout.CircuitBreaker
         event EventHandler HalfOpen;
     }
 
+    // The thread safe implementation of the Circuit Breaker interface.
+    // This is an implementation of Michael Nygard's Circuit Breaker state machine, 
+    // using the Gang of Four's STATE pattern.
     public class CircuitBreaker : ICircuitBreaker
     {
         // Configuration settings.
@@ -174,6 +178,7 @@ namespace Breakout.CircuitBreaker
             }
         }
 
+        // The Circuit Breaker State interface.
         private interface ICircuitBreakerState
         {
             void OperationSucceeded(CircuitBreaker cb);
@@ -182,6 +187,11 @@ namespace Breakout.CircuitBreaker
             void OpenTimedOut(CircuitBreaker cb);
         }
 
+        // The Closed state.
+        // In this state, calls to the protected service pass through as normal.
+        // Successful calls reset the failure count.
+        // Failed calls increment the failure count.
+        // Upon reaching the threshold, trip the breaker.
         private class CircuitBreakerClosedState : ICircuitBreakerState
         {
             public void OperationSucceeded(CircuitBreaker cb)
@@ -201,6 +211,9 @@ namespace Breakout.CircuitBreaker
             }
         }
 
+        // The Open state.
+        // In this state, calls to the protected service are blocked.
+        // Upon the open timeout, attempt to reset the circuit breaker.
         private class CircuitBreakerOpenState : ICircuitBreakerState
         {
             public void OperationSucceeded(CircuitBreaker cb)
@@ -218,6 +231,10 @@ namespace Breakout.CircuitBreaker
             }
         }
 
+        // The Half Open state.
+        // In this state, only one call to the protected service is attempted.
+        // A successful call resets the circuit breaker.
+        // A failed call trips the breaker.
         private class CircuitBreakerHalfOpenState : ICircuitBreakerState
         {
             public void OperationSucceeded(CircuitBreaker cb)
