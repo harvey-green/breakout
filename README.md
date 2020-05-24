@@ -19,6 +19,46 @@ PM> `Install-Package Breakout.CircuitBreaker -Version 1.0.2`
 
 .NET CLI> `dotnet add package Breakout.CircuitBreaker --version 1.0.2`
 
+## Example usage
+
+```csharp
+// Create the circuit breaker.
+ICircuitBreaker cb = new CircuitBreaker(failureCountThreshold: 3, openTimeoutInSeconds: 5);
+
+// Hook up to the events that inform you when the circuit breaker changes state.
+cb.Closed += (source, eventArgs) => System.Console.WriteLine("Just changed to CLOSED");
+cb.Open += (source, eventArgs) => System.Console.WriteLine("Just changed to OPEN");
+cb.HalfOpen += (source, eventArgs) => System.Console.WriteLine("Just changed to HALF OPEN");
+
+// Example of a long running process.
+while (true)
+{
+    if (cb.IsOpen)
+    {
+        // The circuit breaker is OPEN.
+        // Do not perform the call to the third party service.
+        System.Console.WriteLine("The circuit breaker is OPEN. Did not perform call.");
+    }
+    else
+    {
+        // The circuit breaker is CLOSED or HALF OPEN.
+        // Perform the call to the third party service.
+        try
+        {
+            CallToThirdPartyServiceHere();
+
+            // Success case.
+            cb.OperationSucceeded();
+        }
+        catch
+        {
+            // Failure case.
+            cb.OperationFailed();
+        }
+    }
+}
+```
+
 ## breakout state machine
 
 ![The Circuit Breaker state machine](/docs/circuit-breaker-state-machine.png)
