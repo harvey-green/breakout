@@ -25,4 +25,4 @@ PM> `Install-Package Breakout.CircuitBreaker -Version 1.0.2`
 
 The design uses the Gang of Four's STATE design pattern.
 
-![The Circuit Breaker UML design](/docs/circuit-breaker-state-uml-design.png)
+![The Circuit Breaker UML design](/docs/circuit-breaker-uml-design.png)
