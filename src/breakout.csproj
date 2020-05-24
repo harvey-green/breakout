@@ -7,7 +7,7 @@
     <Authors>Harvey Green</Authors>
     <Company>Harvey Green</Company>
     <PackageTags>Circuit Breaker;State Machine;STATE Pattern;GoF;Design Pattern</PackageTags>
-    <Description>A dotnet implementation of Michael Nygard's Circuit Breaker state machine, using the Gang of Four's STATE pattern.</Description>
+    <Description>A dotnet implementation of Michael Nygard's Circuit Breaker state machine, using the Gang of Four's STATE design pattern.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/harvey-green/breakout</RepositoryUrl>
   </PropertyGroup>
