@@ -19,11 +19,11 @@ PM> `Install-Package Breakout.CircuitBreaker -Version 1.0.2`
 
 .NET CLI> `dotnet add package Breakout.CircuitBreaker --version 1.0.2`
 
-## The Circuit Breaker state machine
+## breakout state machine
 
 ![The Circuit Breaker state machine](/docs/circuit-breaker-state-machine.png)
 
-## The Circuit Breaker UML design
+## breakout UML design
 
 The design uses the Gang of Four's STATE design pattern.
 
