@@ -9,6 +9,8 @@ Its a fundamental pattern for protecting your system from all manner of integrat
 
 The circuit breaker pattern was first described in detail by Michael Nygard in the Stability Patterns chapter of his book **"Release It!"** *Design and Deploy Production-Ready Software*.
 
+This implementation is thread safe, lightweight and easily adapted into your existing codebase. Unlike other circuit breaker implementations, it leaves the responsibility for calling the third party service with your client code. Your code only needs to inform the circuit breaker of the success or failure of every call to the third party service, via `OperationSucceeded()` and `OperationFailed()`.
+
 ## Install
 
 Available via [a nuget package](https://www.nuget.org/packages/Breakout.CircuitBreaker/)
