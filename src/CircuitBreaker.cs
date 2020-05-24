@@ -19,7 +19,7 @@ namespace Breakout.CircuitBreaker
 
     // The thread safe implementation of the Circuit Breaker interface.
     // This is an implementation of Michael Nygard's Circuit Breaker state machine, 
-    // using the Gang of Four's STATE pattern.
+    // using the Gang of Four's STATE design pattern.
     public class CircuitBreaker : ICircuitBreaker
     {
         // Configuration settings.
