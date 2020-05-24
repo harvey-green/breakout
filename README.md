@@ -22,6 +22,8 @@ PM> `Install-Package Breakout.CircuitBreaker -Version 1.0.2`
 ## Example usage
 
 ```csharp
+using Breakout.CircuitBreaker;
+
 // Create the circuit breaker.
 ICircuitBreaker cb = new CircuitBreaker(failureCountThreshold: 3, openTimeoutInSeconds: 5);
 
