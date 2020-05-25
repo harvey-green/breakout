@@ -67,7 +67,7 @@ while (true)
 
 ### breakout state machine explanation
 
-While in the **CLOSED** state, calls flow through as normal to the third party service.
+The state machine starts in the **CLOSED** state. While in the **CLOSED** state, calls flow through as normal to the third party service.
 If the operation succeeds, the failure count is reset.
 If the operation fails, the failure count is incremented.
 When the failure count threshold is reached, the trip breaker action is performed,
