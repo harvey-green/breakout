@@ -88,3 +88,11 @@ which transitions the state to OPEN.
 The design uses the Gang of Four's STATE design pattern.
 
 ![The Circuit Breaker UML design](/docs/circuit-breaker-uml-design.png)
+
+<style
+  type="text/css">
+h1 {color:red;}
+
+p {color:blue;}
+</style>
+<p>okay</p>
