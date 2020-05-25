@@ -65,7 +65,7 @@ while (true)
 
 ![The Circuit Breaker state machine](/docs/circuit-breaker-state-machine.png)
 
-###Explanation**
+### breakout state machine explanation
 
 While in the **CLOSED** state, calls flow through as normal to the third party service.
 If the operation succeeds, the failure count is reset.
