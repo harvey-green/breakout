@@ -67,7 +67,7 @@ while (true)
 
 Explanation:
 
-<style>hello{color:green;}</style>
+<span style="color:blue">some *blue* text</span>
 While in the CLOSED state, calls flow through as normal to the third party service.
 If the operation succeeds, the failure count is reset.
 If the operation fails, the failure count is incremented.
