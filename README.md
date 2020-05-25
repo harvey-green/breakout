@@ -89,4 +89,5 @@ The design uses the Gang of Four's STATE design pattern.
 
 ![The Circuit Breaker UML design](/docs/circuit-breaker-uml-design.png)
 
-The C# source that uses the above design is here - [CircuitBreaker.cs](src/CircuitBreaker.cs) and includes code comments. Check it out, use the NuGet and enjoy!
+The C# implementation of the above design is just one file and is located here: [src/CircuitBreaker.cs](src/CircuitBreaker.cs). It includes code comments. 
+Check out the code, use the NuGet and enjoy using the Circuit Breaker!
