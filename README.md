@@ -89,10 +89,4 @@ The design uses the Gang of Four's STATE design pattern.
 
 ![The Circuit Breaker UML design](/docs/circuit-breaker-uml-design.png)
 
-<style
-  type="text/css">
-h1 {color:red;}
-
-p {color:blue;}
-</style>
-okay
+The C# source that uses the above design is here - [CircuitBreaker.cs](src/CircuitBreaker.cs) and includes code comments. Check it out, use the NuGet and enjoy!
