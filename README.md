@@ -65,21 +65,20 @@ while (true)
 
 ![The Circuit Breaker state machine](/docs/circuit-breaker-state-machine.png)
 
-Explanation:
+###Explanation**
 
-<span style="color:blue">some *blue* text</span>
-While in the CLOSED state, calls flow through as normal to the third party service.
+While in the **CLOSED** state, calls flow through as normal to the third party service.
 If the operation succeeds, the failure count is reset.
 If the operation fails, the failure count is incremented.
 When the failure count threshold is reached, the trip breaker action is performed,
 which transitions the state to OPEN.
 
-While in the OPEN stats, no calls flow through to the third party service.
+While in the **OPEN** state, no calls flow through to the third party service.
 The caller just returns immediately, without performing the service call.
 After the open timeout has passed, the attempt reset action is performed,
 which transitions the state to HALF OPEN.
 
-While in the HALF OPEN state, only one call is let through to the third party service.
+While in the **HALF OPEN** state, only one call is let through to the third party service.
 If the operation succeeds, we reset the circuit breaker which transitions the state to CLOSED.
 If the operation fails, the trip breaker action is performed, 
 which transitions the state to OPEN.
